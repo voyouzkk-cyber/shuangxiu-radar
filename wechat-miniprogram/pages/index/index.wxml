@@ -1,0 +1,122 @@
+<view class="page">
+  <block wx:if="{{!picked}}">
+    <view class="kicker">排班备忘</view>
+    <view class="h1">双休雷达</view>
+    <view class="lead">输入品牌名，看社区有没有记它双休。名单写在手机里。不是官方名单。</view>
+  </block>
+
+  <view class="search {{picked ? 'search-tight' : ''}}">
+    <input
+      value="{{query}}"
+      placeholder="输入品牌名，如 农夫山泉、乐事"
+      confirm-type="search"
+      bindinput="onInput"
+      bindconfirm="onInput"
+    />
+    <view wx:if="{{query}}" class="clear" bindtap="clear">清除</view>
+  </view>
+
+  <block wx:if="{{picked}}">
+    <view class="brand-head">
+      <view class="avatar">{{picked.name[0]}}</view>
+      <view>
+        <view class="name">{{picked.name}}</view>
+        <view class="muted">{{picked.name_en}} · {{picked.category}}</view>
+      </view>
+    </view>
+
+    <view class="verdict {{picked.rest ? 'rest' : 'overtime'}}">
+      <view class="kicker light">社区登记</view>
+      <view class="verdict-title">{{picked.statusText}}</view>
+      <view class="verdict-copy">{{picked.rest ? '社区记为双休。仅供参考，请自行判断。' : '社区记为未实行稳定双休。仅供参考，请自行判断。'}}</view>
+    </view>
+
+    <view wx:if="{{picked.note}}" class="note">{{picked.note}}</view>
+
+    <block wx:if="{{alts.length}}">
+      <view class="section-title">同类里记为双休的</view>
+      <view class="muted section-lead">同是「{{picked.category}}」。是否更换，由你自己决定。</view>
+      <view
+        wx:for="{{alts}}"
+        wx:key="id"
+        class="row"
+        data-id="{{item.id}}"
+        bindtap="openBrand"
+      >
+        <view class="avatar sm">{{item.name[0]}}</view>
+        <view class="row-main">
+          <view class="row-top">
+            <text class="row-name">{{item.name}}</text>
+            <text class="badge rest-badge">双休</text>
+          </view>
+          <view class="muted">{{item.category}} · {{item.total}} 票</view>
+        </view>
+      </view>
+    </block>
+
+    <view class="vote-label">这是你了解的情况吗</view>
+    <view class="vote-row">
+      <button
+        class="vote {{pickedVote === 'rest' ? 'on-rest' : ''}}"
+        disabled="{{!!pickedVote}}"
+        data-rest="true"
+        bindtap="vote"
+      >双休 {{picked.weekend_votes}}</button>
+      <button
+        class="vote {{pickedVote === 'overtime' ? 'on-over' : ''}}"
+        disabled="{{!!pickedVote}}"
+        data-rest="false"
+        bindtap="vote"
+      >非双休 {{picked.no_weekend_votes}}</button>
+    </view>
+    <view wx:if="{{pickedVote}}" class="muted tiny">本机已投过票。</view>
+    <button class="ghost" bindtap="goDetail">查看完整记录</button>
+    <button class="ghost" bindtap="clear">查另一个品牌</button>
+  </block>
+
+  <block wx:elif="{{query}}">
+    <view wx:if="{{hits.length === 0}}" class="empty card">
+      还没有「{{query}}」。在这家公司上班的人可以登记。
+      <text class="link" bindtap="goRegister">去登记</text>
+    </view>
+    <view
+      wx:for="{{hits}}"
+      wx:key="id"
+      class="row"
+      data-id="{{item.id}}"
+      bindtap="openBrand"
+    >
+      <view class="avatar sm">{{item.name[0]}}</view>
+      <view class="row-main">
+        <view class="row-top">
+          <text class="row-name">{{item.name}}</text>
+          <text class="badge {{item.rest ? 'rest-badge' : 'over-badge'}}">{{item.statusText}}</text>
+        </view>
+        <view class="muted">{{item.category}} · {{item.total}} 票</view>
+      </view>
+    </view>
+  </block>
+
+  <block wx:else>
+    <view class="kicker hot-label">热门查询</view>
+    <view class="chips">
+      <view wx:for="{{hot}}" wx:key="*this" class="chip" data-name="{{item}}" bindtap="tapHot">{{item}}</view>
+    </view>
+    <view class="stats">
+      <view class="stat card">
+        <view class="num">{{stats.total}}</view>
+        <view class="muted">已收录</view>
+      </view>
+      <view class="stat card">
+        <view class="num rest-c">{{stats.rest}}</view>
+        <view class="muted">双休</view>
+      </view>
+      <view class="stat card">
+        <view class="num over-c">{{stats.overtime}}</view>
+        <view class="muted">非双休</view>
+      </view>
+    </view>
+    <view class="legal">众包备忘，不是公司官方声明。请自行判断。</view>
+    <view class="link" bindtap="goAbout">说明与隐私</view>
+  </block>
+</view>

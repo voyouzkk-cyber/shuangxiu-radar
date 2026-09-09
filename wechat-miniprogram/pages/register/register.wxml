@@ -1,0 +1,33 @@
+<view class="page">
+  <view class="kicker">众包</view>
+  <view class="h1">登记品牌</view>
+  <view class="lead">在这家公司上班，或常买它的产品？把品牌名记下来。预置名单写在程序里；你新登记的先留在这台手机上。</view>
+
+  <view class="label">品牌名</view>
+  <input class="field" value="{{name}}" maxlength="40" placeholder="包装上的名字，例如 农夫山泉" bindinput="setName" />
+
+  <view class="label">英文名（选填）</view>
+  <input class="field" value="{{nameEn}}" maxlength="60" placeholder="Nongfu Spring" bindinput="setNameEn" />
+
+  <view class="label">品类</view>
+  <view class="chips">
+    <view
+      wx:for="{{categories}}"
+      wx:key="*this"
+      class="chip {{category === item ? 'on' : ''}}"
+      data-v="{{item}}"
+      bindtap="setCategory"
+    >{{item}}</view>
+  </view>
+
+  <view class="label">双休情况</view>
+  <view class="vote-row">
+    <button class="vote {{weekendOff === true ? 'on-rest' : ''}}" bindtap="setRest">双休</button>
+    <button class="vote {{weekendOff === false ? 'on-over' : ''}}" bindtap="setOver">非双休</button>
+  </view>
+
+  <view class="label">补充说明（选填）</view>
+  <textarea class="area" value="{{note}}" maxlength="160" placeholder="只写排班情况。不要填姓名、工号、电话或微信号。" bindinput="setNote" />
+
+  <button class="submit" bindtap="submit">提交登记</button>
+</view>

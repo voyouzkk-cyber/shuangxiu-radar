@@ -1,0 +1,6 @@
+@import "../index/index.wxss";
+@import "../list/list.wxss";
+
+.share { margin-top: 32rpx; padding: 28rpx; }
+.share-row { display: flex; justify-content: space-between; font-size: 28rpx; }
+.bar { margin-top: 16rpx; }

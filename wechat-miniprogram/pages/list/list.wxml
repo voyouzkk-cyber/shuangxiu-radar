@@ -1,0 +1,35 @@
+<view class="page">
+  <view class="kicker">社区库</view>
+  <view class="h1">品牌库</view>
+  <view class="lead">按双休 / 非双休浏览。热心人登记品牌名，买的时候查一下再决定。</view>
+
+  <view class="search">
+    <input value="{{q}}" placeholder="搜索品牌、英文名、别名" bindinput="onQ" />
+  </view>
+
+  <view class="filters">
+    <view class="chip {{filter === 'all' ? 'on' : ''}}" data-v="all" bindtap="setFilter">全部 {{counts.all}}</view>
+    <view class="chip {{filter === 'rest' ? 'on' : ''}}" data-v="rest" bindtap="setFilter">双休 {{counts.rest}}</view>
+    <view class="chip {{filter === 'overtime' ? 'on' : ''}}" data-v="overtime" bindtap="setFilter">非双休 {{counts.overtime}}</view>
+  </view>
+
+  <view
+    wx:for="{{rows}}"
+    wx:key="id"
+    class="row"
+    data-id="{{item.id}}"
+    bindtap="open"
+  >
+    <view class="avatar sm">{{item.name[0]}}</view>
+    <view class="row-main">
+      <view class="row-top">
+        <text class="row-name">{{item.name}}</text>
+        <text class="badge {{item.rest ? 'rest-badge' : 'over-badge'}}">{{item.statusText}}</text>
+      </view>
+      <view class="muted">{{item.category}} · {{item.total}} 票</view>
+      <view class="bar"><view class="bar-fill" style="width: {{item.sharePct}}%;"></view></view>
+    </view>
+  </view>
+
+  <view wx:if="{{rows.length === 0}}" class="empty card">没有匹配的品牌。</view>
+</view>

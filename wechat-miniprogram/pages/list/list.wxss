@@ -1,0 +1,6 @@
+@import "../index/index.wxss";
+
+.filters { display: flex; gap: 12rpx; margin: 24rpx 0 8rpx; }
+.chip.on { background: #1c1916; color: #f3eee6; }
+.bar { height: 6rpx; background: #e7e0d6; border-radius: 999rpx; margin-top: 12rpx; overflow: hidden; }
+.bar-fill { height: 100%; background: #1b6b4a; }

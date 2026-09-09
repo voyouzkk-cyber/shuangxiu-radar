@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #f3eee6;
+  --color-foreground: #1c1916;
+  --color-card: #fcfaf6;
+  --color-card-foreground: #1c1916;
+  --color-primary: #1c1916;
+  --color-primary-foreground: #f3eee6;
+  --color-muted: #e7e0d6;
+  --color-muted-foreground: #6b655c;
+  --color-border: #d4cbbe;
+  --color-ring: #1c1916;
+  --color-inset: #241f1b;
+  --color-rest: #1b6b4a;
+  --color-rest-foreground: #f4faf6;
+  --color-rest-soft: #e3f0e8;
+  --color-overtime: #b42318;
+  --color-overtime-foreground: #fdf6f5;
+  --color-overtime-soft: #f6e6e3;
+  --color-destructive: #b42318;
+  --color-destructive-foreground: #fdf6f5;
+
+  --font-sans: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", system-ui, sans-serif;
+  --font-display: "Noto Serif SC", "Songti SC", "STSong", serif;
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 28px;
+
+  --shadow-border:
+    0px 0px 0px 1px rgba(28, 25, 22, 0.06),
+    0px 1px 2px -1px rgba(28, 25, 22, 0.06),
+    0px 2px 4px 0px rgba(28, 25, 22, 0.04);
+  --shadow-border-hover:
+    0px 0px 0px 1px rgba(28, 25, 22, 0.08),
+    0px 1px 2px -1px rgba(28, 25, 22, 0.08),
+    0px 2px 4px 0px rgba(28, 25, 22, 0.06);
+
+  --ease-smooth-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  body {
+    background: var(--color-inset);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    font-family: var(--font-display);
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  img {
+    outline: 1px solid rgba(28, 25, 22, 0.1);
+    outline-offset: -1px;
+  }
+}
+

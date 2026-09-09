@@ -1,0 +1,9 @@
+<view class="wrap">
+  <view class="kicker">使用前</view>
+  <view class="h1">这是匿名备忘，不是黑名单</view>
+  <view class="p">双休情况来自众包登记，可能过时或不准。不是公司官方声明，也不构成对任何企业的指控或抵制号召。</view>
+  <view class="p">本工具不收集姓名、手机号、微信号，不设账号。请勿填写能识别个人的信息。</view>
+  <view class="p">是否购买，请你自己判断。</view>
+  <button class="ok" bindtap="accept">我知道了</button>
+  <view class="link" bindtap="goAbout">说明与隐私</view>
+</view>

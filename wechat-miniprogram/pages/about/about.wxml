@@ -1,0 +1,9 @@
+<view class="page">
+  <view class="kicker">说明</view>
+  <view class="h1">双休雷达</view>
+  <view class="lead">用来查日常品牌有没有被登记为双休。数据是预置的众包备忘，查询在本机完成，不连服务器，不建用户档案。</view>
+  <view class="lead">不收集姓名、手机号、微信号、位置。新登记和投票只存在这台手机上，不会上传，别人看不到是谁写的。</view>
+  <view class="lead">同一公司不同岗位、时期可能不同。条目可能不准。本工具不对任何公司作指控，也不号召抵制。</view>
+  <view class="lead">请勿在说明里填写姓名、工号、电话或内部资料。</view>
+  <view class="lead">没有客服，没有主办人主页。这是公开备忘，不是实名举报平台。</view>
+</view>

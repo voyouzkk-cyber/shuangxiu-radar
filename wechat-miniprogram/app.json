@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/gate/gate",
+    "pages/index/index",
+    "pages/list/list",
+    "pages/detail/detail",
+    "pages/register/register",
+    "pages/about/about"
+  ],
+  "window": {
+    "navigationBarTitleText": "双休雷达",
+    "navigationBarBackgroundColor": "#F3EEE6",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#F3EEE6",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#6B655C",
+    "selectedColor": "#1C1916",
+    "backgroundColor": "#FCFAF6",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/list/list",
+        "text": "品牌库",
+        "iconPath": "assets/tab-list.png",
+        "selectedIconPath": "assets/tab-list-on.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "查询",
+        "iconPath": "assets/tab-search.png",
+        "selectedIconPath": "assets/tab-search-on.png"
+      },
+      {
+        "pagePath": "pages/register/register",
+        "text": "登记",
+        "iconPath": "assets/tab-pen.png",
+        "selectedIconPath": "assets/tab-pen-on.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

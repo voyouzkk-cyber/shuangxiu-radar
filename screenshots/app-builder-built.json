@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "双休雷达",
+      "hasCanvas": false,
+      "bodyTextLen": 124,
+      "bodyTextHash": "d5a4c025b3acea1c1bdd2ab32e1714054a8fcc7d6702647cf627a7660d6be163",
+      "bodyTextPrefix": "消费投票 双休雷达 拍商品包装，查这家公司双不双休。再决定买，还是不买。 对准包装上的商标 拍照识别 相册 66 已收录 22 ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "双休雷达",
+      "hasCanvas": false,
+      "bodyTextLen": 124,
+      "bodyTextHash": "d5a4c025b3acea1c1bdd2ab32e1714054a8fcc7d6702647cf627a7660d6be163",
+      "bodyTextPrefix": "消费投票 双休雷达 拍商品包装，查这家公司双不双休。再决定买，还是不买。 对准包装上的商标 拍照识别 相册 66 已收录 22 ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json"
+}

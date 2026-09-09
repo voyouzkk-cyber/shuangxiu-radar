@@ -1,0 +1,4 @@
+{
+  "desc": "双休雷达",
+  "rules": [{ "action": "allow", "page": "*" }]
+}
